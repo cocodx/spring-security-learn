@@ -1,0 +1,9 @@
+server:
+  port: 8888
+
+
+spring:
+  security:
+    user:
+      name: zhangsan
+      password: lg123456
