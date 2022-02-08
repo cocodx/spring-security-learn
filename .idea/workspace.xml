@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="618a4d2b-d19f-48d9-aa10-fda222092bea" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/oauth2-server-demo1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2-server-demo1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/oauth2-server-demo2/src/main/java/oauth2/controller/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/oauth2-server-demo2/src/main/java/oauth2/controller/ApiController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +69,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.OAuth2ServerApplication (1)">
+    <configuration name="OAuth2ServerApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="oauth2-server-demo2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="oauth2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="oauth2.OAuth2ServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OAuth2ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="oauth2-server-demo1" />
       <extension name="coverage">
@@ -86,6 +98,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.OAuth2ServerApplication (1)" />
         <item itemvalue="Spring Boot.OAuth2ServerApplication" />
       </list>
     </recent_temporary>
@@ -101,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1643115506905</updated>
       <workItem from="1643115508528" duration="11271000" />
-      <workItem from="1644335646316" duration="748000" />
+      <workItem from="1644335646316" duration="1007000" />
     </task>
     <servers />
   </component>

@@ -17,3 +17,10 @@ http://localhost:8888/oauth/authorize?client_id=clientApp&redirect_uri=http://lo
 2、此时跳转登录校验界面，输入WebSecurityConfig的配置，获取到code  
 3、到postman调用接口，获取到token,获取token:http://localhost:8888/oauth/token?grant_type=authorization_code&code=ZzBmFY&client_id=clientApp&client_secret=112233&redirect_uri=http://localhost:8001/payment/get/1  
 4、然后根据token，去调用/api的controller,调用接口示例：http://localhost:8888/api/userInfo?access_token=ee963d54-a3dc-42aa-a424-81199c47aed4
+
+### oauth2-server-demo2 
+介绍：简易模式  
+1、项目启动，浏览器访问下面的uri 
+http://localhost:8888/oauth/authorize?client_id=clientApp&redirect_uri=http://localhost:8001/payment/get/1&response_type=token&scope=read_userInfo&state=123456  
+2、输入账号密码：zhangsan 123456  
+3、点击左侧box，确定，可以看到uri上面已经返回了token  
