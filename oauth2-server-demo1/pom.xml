@@ -11,7 +11,7 @@
 
     <artifactId>oauth2-server-demo1</artifactId>
     <description>
-        oauth2-server
+        oauth2-server，授权码模式
     </description>
 
     <dependencies>
