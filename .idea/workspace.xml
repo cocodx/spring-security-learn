@@ -52,6 +52,12 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\IDEA_workspace\spring-security-learn\oauth2-server-demo2\src\main\java" />
+      <recent name="D:\code\IDEA_workspace\spring-security-learn\oauth2-server-demo2\src\main\resources" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
