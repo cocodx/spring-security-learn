@@ -29,4 +29,6 @@ http://localhost:8888/oauth/authorize?client_id=clientApp&redirect_uri=http://lo
 介绍：密码模式  
 
 1、项目启动，post请求    
-http://localhost:8888/oauth/token?grant_type=password&username=zhangsan&password=112233&scope=read_userInfo  
+http://localhost:8888/oauth/token?grant_type=password&username=zhangsan&password=123456&scope=read_userInfo  
+并且Basic Auth认证 输入clientId和secret  
+  
