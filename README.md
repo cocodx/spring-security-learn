@@ -24,3 +24,9 @@ http://localhost:8888/oauth/authorize?client_id=clientApp&redirect_uri=http://lo
 http://localhost:8888/oauth/authorize?client_id=clientApp&redirect_uri=http://localhost:8001/payment/get/1&response_type=token&scope=read_userInfo&state=123456  
 2、输入账号密码：zhangsan 123456  
 3、点击左侧box，确定，可以看到uri上面已经返回了token  
+
+### oauth2-server-demo3  
+介绍：密码模式  
+
+1、项目启动，post请求    
+http://localhost:8888/oauth/token?grant_type=password&username=zhangsan&password=112233&scope=read_userInfo  

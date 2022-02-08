@@ -6,6 +6,7 @@
   <modules>
     <module>oauth2-server-demo1</module>
     <module>oauth2-server-demo2</module>
+    <module>oauth2-server-demo3</module>
   </modules>
 
   <parent>
