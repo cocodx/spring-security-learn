@@ -23,7 +23,7 @@
 hs_err_pid*
 
 # idea文件
-.idea/
+/.idea/
 *.iml
 *.idea/
 target/
