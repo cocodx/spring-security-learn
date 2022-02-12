@@ -53,6 +53,8 @@ http://localhost:8888/oauth/authorize?client_id=clientApp&redirect_uri=http://lo
 ### xxxxxx
 介绍：基于session认证的方式  
 
+session认证流程图  
+![image](https://github.com/cocodx/spring-security-learn/blob/master/image/%E5%9F%BA%E4%BA%8Esession%E8%AE%A4%E8%AF%81%E7%9A%84%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 基于session认证的方式由Servlet规范定制，Servlet容器已实现，用户通过HttpSession的操作方法即可实现
 
 1、项目启动，post请求    
