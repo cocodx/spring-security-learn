@@ -50,6 +50,11 @@ http://localhost:8888/oauth/authorize?client_id=clientApp&redirect_uri=http://lo
 ### oauth2-server-demo3  
 介绍：密码模式  
 
+### xxxxxx
+介绍：基于session认证的方式  
+
+基于session认证的方式由Servlet规范定制，Servlet容器已实现，用户通过HttpSession的操作方法即可实现
+
 1、项目启动，post请求    
 http://localhost:8888/oauth/token?grant_type=password&username=zhangsan&password=123456&scope=read_userInfo  
 并且Basic Auth认证 输入clientId和secret  
