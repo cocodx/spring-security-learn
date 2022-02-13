@@ -3,3 +3,5 @@ spring security所解决的问题就是安全访问控制，而安全访问控�
 Spring security对Web资源的保护是靠Filter实现的，初始化的时候，创建一个SpringSecurityFilterChain的Servlet过滤器，它实现了javax.servlet.Filter  
 ![image](https://github.com/cocodx/spring-security-learn/blob/master/image/SpringSecurityChain.jpg)  
 ![image](https://github.com/cocodx/spring-security-learn/blob/master/image/chain2.jpg)
+
+认证器和授权器
