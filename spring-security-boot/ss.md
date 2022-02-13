@@ -20,4 +20,6 @@ UserDetailsService
 获取用户信息（密码：加密后的密码）
 
 PasswordEncoder  
-常用：BCryptPasswordEncoder
+常用：BCryptPasswordEncoder  
+
+最后，FilterSecurityInterceptor会调用 AccessDecisionManager 进行授权决策，若决策通过，则允许访问资源，否则将禁止访问。
