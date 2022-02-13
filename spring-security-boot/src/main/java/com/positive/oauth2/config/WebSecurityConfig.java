@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -52,6 +53,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login-view")//登录界面
                 .loginProcessingUrl("/login")//指定登录url
                 .successForwardUrl("/login-success")//自定义登录成功的界面地址
+        .and()
+        .sessionManagement()
+        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
         ;
     }
 }

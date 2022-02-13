@@ -25,4 +25,7 @@ PasswordEncoder
 授权流程  
 最后，FilterSecurityInterceptor会调用 AccessDecisionManager 进行授权决策，若决策通过，则允许访问资源，否则将禁止访问。  
 
-spring security 为防止CSRF的发生，限制了除get以外的大多数方法。
+spring security 为防止CSRF的发生，限制了除get以外的大多数方法。  
+
+SecurityContextHolder:security的上下文和当前线程绑定  
+
