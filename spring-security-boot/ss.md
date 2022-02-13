@@ -8,3 +8,8 @@ Spring security对Web资源的保护是靠Filter实现的，初始化的时候�
 
 spring security认证流程
 ![image](https://github.com/cocodx/spring-security-learn/blob/master/image/spring-security%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B.jpg)
+
+UserDetailsService  
+
+PasswordEncoder  
+常用：BCryp

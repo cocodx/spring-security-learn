@@ -22,7 +22,7 @@ public class SpringDataUserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //用数据库查询账号信息
         log.info("userName:"+username);
-        UserDetails userDetails = User.withUsername("zhangsan").password("1q2w3e").authorities("p1").build();
+        UserDetails userDetails = User.withUsername("zhangsan").password("$2a$10$lqDo6e4B2Ekm9I7L6L7t/ONFQqDPshhnvS0DycPRocgcyrbeRCz2C").authorities("p1").build();
         return userDetails;
     }
 }
