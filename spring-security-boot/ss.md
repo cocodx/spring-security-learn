@@ -10,6 +10,7 @@ spring security认证流程
 ![image](https://github.com/cocodx/spring-security-learn/blob/master/image/spring-security%E8%AE%A4%E8%AF%81%E6%B5%81%E7%A8%8B.jpg)
 
 UserDetailsService  
+获取用户信息（密码：加密后的密码）
 
 PasswordEncoder  
-常用：BCryp
+常用：BCryptPasswordEncoder
