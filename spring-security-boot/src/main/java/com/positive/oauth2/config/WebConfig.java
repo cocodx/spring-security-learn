@@ -45,10 +45,11 @@ public class WebConfig implements WebMvcConfigurer {
         //定位到自定义login界面
         registry.addViewController("/").setViewName("redirect:/login-view");
         registry.addViewController("/login-view").setViewName("login");
-        registry.addViewController("/login-success").setViewName("login-success");
+        //addViewController只能添加get，head请求的url，一般常用于静态界面
+//        registry.addViewController("/login-success").setViewName("login-success");
     }
 
-    //尝试解决springmvc接收参数中文乱码-无效
+    //尝试解决springMvc接收参数中文乱码-无效
     @Bean
     public HttpMessageConverter<String> responseBodyConverter(){
         StringHttpMessageConverter converter = new StringHttpMessageConverter(StandardCharsets.UTF_8);
