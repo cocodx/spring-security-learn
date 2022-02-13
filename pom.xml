@@ -9,6 +9,7 @@
     <module>oauth2-server-demo3</module>
       <module>session-auth-server</module>
       <module>spring-security-one</module>
+      <module>spring-security-boot</module>
   </modules>
 
   <parent>
