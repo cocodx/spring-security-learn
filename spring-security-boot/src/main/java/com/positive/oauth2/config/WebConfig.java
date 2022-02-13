@@ -30,18 +30,22 @@ import java.util.List;
 public class WebConfig implements WebMvcConfigurer {
 
     //视图解析器
-    @Bean
-    public InternalResourceViewResolver viewResolver(){
-        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-        viewResolver.setPrefix("/WEB-INF/view/");
-        viewResolver.setSuffix(".html");
-        return viewResolver;
-    }
+//    @Bean
+//    public InternalResourceViewResolver viewResolver(){
+//        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+//        viewResolver.setPrefix("/WEB-INF/view/");
+//        viewResolver.setSuffix(".jsp");
+//        return viewResolver;
+//    }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //跳转到Spring security的登录界面
-        registry.addViewController("/").setViewName("redirect:/login");
+//        registry.addViewController("/").setViewName("redirect:/login");
+        //定位到自定义login界面
+        registry.addViewController("/").setViewName("redirect:/login-view");
+        registry.addViewController("/login-view").setViewName("login");
+        registry.addViewController("/login-success").setViewName("login-success");
     }
 
     //尝试解决springmvc接收参数中文乱码-无效

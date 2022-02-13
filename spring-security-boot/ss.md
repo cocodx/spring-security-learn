@@ -22,4 +22,7 @@ UserDetailsService
 PasswordEncoder  
 常用：BCryptPasswordEncoder  
 
-最后，FilterSecurityInterceptor会调用 AccessDecisionManager 进行授权决策，若决策通过，则允许访问资源，否则将禁止访问。
+授权流程  
+最后，FilterSecurityInterceptor会调用 AccessDecisionManager 进行授权决策，若决策通过，则允许访问资源，否则将禁止访问。  
+
+spring security 为防止CSRF的发生，限制了除get以外的大多数方法。

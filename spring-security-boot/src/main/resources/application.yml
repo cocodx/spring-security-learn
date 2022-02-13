@@ -6,3 +6,9 @@ server:
 spring:
   application:
     name: spring-security-boot
+
+  thymeleaf:
+    prefix: classpath:/view/
+    suffix: .html
+    check-template-location: true
+    cache: false

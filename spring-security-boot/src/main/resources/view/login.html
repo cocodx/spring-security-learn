@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+</head>
+<body>
+<form action="#" th:action="@{/login}" method="POST">
+    username:<!--/*@thymesVar id="username" type=""*/-->
+    <input type="text" id="username" name="username" th:value="${username}"><br>
+    <!--/*@thymesVar id="password" type=""*/-->
+    password:<input type="password" id="password" name="password" th:value="${password}"><br>
+    <input type="submit" value="submit">
+</form>
+</body>
+</html>
