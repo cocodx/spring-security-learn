@@ -29,3 +29,6 @@ spring security 为防止CSRF的发生，限制了除get以外的大多数方法
 
 SecurityContextHolder:security的上下文和当前线程绑定  
 
+FilterSecurityInterceptor:基于web的url拦截  
+MethodSecurityInterceptor:基于方法的拦截  
+

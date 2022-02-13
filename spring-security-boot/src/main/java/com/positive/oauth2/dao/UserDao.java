@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,5 +29,19 @@ public class UserDao {
         }
         return list.get(0);
 
+    }
+
+    //根据userId查找用户权限
+    public List<String> findPermissionByUserId(Long userId){
+        String sql = "select * from t_permission where id in\n" +
+                "(\n" +
+                "\tselect permission_id from t_role_permission where role_id in\n" +
+                "\t(\n" +
+                "\t\tselect role_id from t_user_role where user_id=?)\n" +
+                ")";
+        List<PermissionDto> list = jdbcTemplate.query(sql,new Object[]{userId},new BeanPropertyRowMapper<>(PermissionDto.class));
+        List<String> permissions = new ArrayList<>();
+        list.forEach(c -> permissions.add(c.getCode()));
+        return permissions;
     }
 }
