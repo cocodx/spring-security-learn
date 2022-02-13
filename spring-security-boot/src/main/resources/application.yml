@@ -12,3 +12,9 @@ spring:
     suffix: .html
     check-template-location: true
     cache: false
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring-security-learn?useSSL=false
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver
