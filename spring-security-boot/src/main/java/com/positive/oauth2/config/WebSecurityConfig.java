@@ -21,13 +21,13 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     //定义用户服务信息，查询用户信息
-    @Bean
-    public UserDetailsService userDetailsService(){
-        InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
-        inMemoryUserDetailsManager.createUser(User.withUsername("zhangsan").password("1q2w3e").authorities("p1").build());
-        inMemoryUserDetailsManager.createUser(User.withUsername("lisi").password("1q2w3e").authorities("p2").build());
-        return inMemoryUserDetailsManager;
-    }
+//    @Bean
+//    public UserDetailsService userDetailsService(){
+//        InMemoryUserDetailsManager inMemoryUserDetailsManager = new InMemoryUserDetailsManager();
+//        inMemoryUserDetailsManager.createUser(User.withUsername("zhangsan").password("1q2w3e").authorities("p1").build());
+//        inMemoryUserDetailsManager.createUser(User.withUsername("lisi").password("1q2w3e").authorities("p2").build());
+//        return inMemoryUserDetailsManager;
+//    }
 
     //密码解码器
     @Bean
