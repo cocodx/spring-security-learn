@@ -9,3 +9,13 @@ OAuth2AuthenticationProcessingFilter用来给请求给出的令牌解析鉴权
 
 ![image](https://github.com/cocodx/spring-security-learn/blob/master/image/security%E6%9E%B6%E6%9E%84%E5%9B%BE.jpg)  
 
+authenticationManager:
+userDetailsService:
+authorizationCodeServices:
+implicitGrantService:
+tokenGranter:
+
+
+/oauth/authorize:
+/oauth/token:
+/oauth/token:
