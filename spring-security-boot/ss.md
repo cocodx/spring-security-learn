@@ -32,3 +32,7 @@ SecurityContextHolder:security的上下文和当前线程绑定
 FilterSecurityInterceptor:基于web的url拦截  
 MethodSecurityInterceptor:基于方法的拦截  
 
+web授权  
+
+方法拦截：在controller方法层面授权，提供了很多注解
+

@@ -1,5 +1,6 @@
 package com.positive.oauth2.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,11 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class LoginController {
 
+    @PreAuthorize("hasAuthority('p1')")
     @RequestMapping(value = "/r/r1",produces = "text/plain;charset=utf-8")
     public String r1(){
         return getUsername()+"r1";
     }
 
+    @PreAuthorize("hasAuthority('p2')")
     @RequestMapping(value = "/r/r2",produces = "text/plain;charset=utf-8")
     public String r2(){
         return getUsername()+"r2";
