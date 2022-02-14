@@ -19,3 +19,5 @@ tokenGranter:
 /oauth/authorize:
 /oauth/token:
 /oauth/token:
+
+授权码模式：第三方微信登录例子
