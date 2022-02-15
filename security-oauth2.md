@@ -20,4 +20,21 @@ tokenGranter:
 /oauth/token:
 /oauth/token:
 
-授权码模式：第三方微信登录例子
+###授权码模式：第三方微信登录例子  
+
+1、浏览器GET访问 http://localhost:53020/uaa/oauth/authorize?client_id=c1&redirect_uri=http://www.baidu.com&response_type=code&scope=all    
+2、输入用户名和密码  
+4、获取code，5GqdCO  
+3、拿着code，POST请求调用token接口 http://localhost:53020/uaa/oauth/token?client_id=c1&client_secret=secret&grant_type=authorization_code&code=5GqdCO&redirect_uri=http://www.baidu.com  
+
+###隐藏式：没有后端，简化模式：只要认证成功，就返回token  
+
+1、浏览器GET访问 http://localhost:53020/uaa/oauth/authorize?response_type=token&client_id=c1&redirect_uri=http://www.baidu.com&scope=all  
+
+###密码式：直接发username和password，拿到以后，直接向目标请求令牌  
+
+1、 POST请求访问 http://localhost:53020/uaa/oauth/token?client_id=c1&grant_type=password&username=zhangsan&password=1q2w3e&client_secret=secret  
+
+###凭证式client credentials，针对第三方应用，多个用户公用一个
+
+1、POST请求访问 http://localhost:53020/uaa/oauth/token?client_id=c1&&client_secret=secret&grant_type=client_credentials  
