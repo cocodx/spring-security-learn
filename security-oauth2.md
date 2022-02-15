@@ -38,3 +38,9 @@ tokenGranter:
 ###凭证式client credentials，针对第三方应用，多个用户公用一个
 
 1、POST请求访问 http://localhost:53020/uaa/oauth/token?client_id=c1&&client_secret=secret&grant_type=client_credentials  
+
+###刷新token
+
+当用户token过期之后，再重来一遍，很可能体验不好，也没必要，所以，可以带着就的token，调用刷新token的节点  
+
+1、POST请求访问 http://localhost:53020/uaa/oauth/token?client_id=c1&client_secret=secret&grant_type=refresh_token&refresh_token=19d503b3-17ab-416c-b7dd-be4292305fe2    
