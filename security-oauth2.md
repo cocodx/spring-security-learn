@@ -43,4 +43,25 @@ tokenGranter:
 
 当用户token过期之后，再重来一遍，很可能体验不好，也没必要，所以，可以带着就的token，调用刷新token的节点  
 
-1、POST请求访问 http://localhost:53020/uaa/oauth/token?client_id=c1&client_secret=secret&grant_type=refresh_token&refresh_token=19d503b3-17ab-416c-b7dd-be4292305fe2    
+1、POST请求访问 http://localhost:53020/uaa/oauth/token?client_id=c1&client_secret=secret&grant_type=refresh_token&refresh_token=19d503b3-17ab-416c-b7dd-be4292305fe2  
+
+当资源服务和授权服务不在一起时资源服务使用RemoteTokenService远程请求授权服务验证token，如果访问量较大会影响系统性能
+
+解决上边问题：  
+令牌采用JWT格式即可解决上边的问题，用户认证通过会得到一个JWT令牌，JWT令牌中已经包括了用户相关的信息，客户端只需要携带JWT访问资源服务，资源服务根据事先约定
+的算法自行完成令牌校验，无需每次都请求认证服务完成授权。  
+
+JWT？  
+JSON Web Token，是一个行业开放标准，它定义了一种简介的、自包含的协议格式，用于在通信双方传递json对象，传递的信息，经过数字签名可以被验证和信任。  
+JWT可以使用HMAC算法或使用RSA的公约、私钥来签名，防止为篡改  
+
+1）基于json  
+2）容易扩展  
+3）非对称加密  
+4）不用依赖认证服务  
+
+占用空间比较大  
+
+Header：定义jwt加密算法，搞成base64编码    
+Payload：内容，签发者，过期时间，面向用户，自定义字段等，也搞成base64  
+Signature：签名，防止jwt内容篡改，把前两个base64加一块，用.搞成字符串，再用header中的算法加密生成签名
