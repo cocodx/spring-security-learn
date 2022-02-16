@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class OrderController {
 
-    @PreAuthorize("hasAuthority('p3')")
+    @PreAuthorize("hasAuthority('p2')")
     @RequestMapping("/r/r1")
     public String r1(){
         return "r1";

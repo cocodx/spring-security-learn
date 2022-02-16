@@ -1,9 +1,9 @@
 package com.positive.oauth2.config;
 
+import lombok.Data;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
@@ -13,6 +13,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
  * @description tokenStore
  * @date 15/2/2022 上午6:25
  */
+@Data
 @Configuration
 public class TokenConfig {
 

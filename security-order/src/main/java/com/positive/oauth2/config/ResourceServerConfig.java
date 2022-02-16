@@ -1,5 +1,6 @@
 package com.positive.oauth2.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,6 +10,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.RemoteTokenServices;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
  * @author 正能量导师
@@ -23,20 +25,24 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     //资源服务id要和授权服务id是一致的
     public static final String RESOURCE_ID = "res1";
 
-    @Bean
-    public ResourceServerTokenServices tokenService(){
-        //使用远程服务，授权服务校验token，必须指定校验token的url，clientId，clientSecret
-        RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
-        remoteTokenServices.setCheckTokenEndpointUrl("http://localhost:53020/uaa/oauth/check_token");
-        remoteTokenServices.setClientId("c1");
-        remoteTokenServices.setClientSecret("secret");
-        return remoteTokenServices;
-    }
+    @Autowired
+    TokenStore tokenStore;
+
+//    @Bean
+//    public ResourceServerTokenServices tokenService(){
+//        //使用远程服务，授权服务校验token，必须指定校验token的url，clientId，clientSecret
+//        RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
+//        remoteTokenServices.setCheckTokenEndpointUrl("http://localhost:53020/uaa/oauth/check_token");
+//        remoteTokenServices.setClientId("c1");
+//        remoteTokenServices.setClientSecret("secret");
+//        return remoteTokenServices;
+//    }
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
         resources.resourceId(RESOURCE_ID)
-                .tokenServices(tokenService())//验证令牌的服务
+                .tokenStore(tokenStore)
+//                .tokenServices(tokenService())//验证令牌的服务
                 .stateless(true)
         ;
     }
