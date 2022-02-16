@@ -17,7 +17,7 @@ public class SpringBootTest {
     @Test
     public void testBCrypt(){
         //对密码进行加密
-        String hashpw = BCrypt.hashpw("1q2w3e",BCrypt.gensalt());
+        String hashpw = BCrypt.hashpw("secret",BCrypt.gensalt());
         System.out.println(hashpw);
 
         //校验密码

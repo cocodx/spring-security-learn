@@ -11,6 +11,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.InMemoryAuthorizationCodeServices;
+import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
+
+import javax.sql.DataSource;
 
 /**
  * @author 正能量导师
@@ -38,15 +41,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManager();
     }
 
+    /*授权码模式的授权码如何存取，暂时采用内存方式*/
+//    @Bean
+//    public AuthorizationCodeServices authorizationCodeServices(){
+//        return new InMemoryAuthorizationCodeServices();
+//    }
+
     @Bean
-    public AuthorizationCodeServices authorizationCodeServices(){
-        return new InMemoryAuthorizationCodeServices();
+    public AuthorizationCodeServices authorizationCodeServices(DataSource dataSource){
+        return new JdbcAuthorizationCodeServices(dataSource);//设置授权码模式，把code存取在数据库
     }
 
 
     //密码解码器
     @Bean
-    public static PasswordEncoder passwordEncoder(){
+    public PasswordEncoder passwordEncoder(){
         //明文比对
 //        return NoOpPasswordEncoder.getInstance();
         return new BCryptPasswordEncoder();
