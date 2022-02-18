@@ -13,6 +13,7 @@
     <module>security-uaa</module>
     <module>security-order</module>
     <module>security-gateway</module>
+      <module>security-discovery</module>
   </modules>
 
   <parent>
